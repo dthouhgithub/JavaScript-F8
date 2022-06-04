@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="coins">
         DIV
         <h1>WELCOME TO LESSION TRAINING JAVASCRIPT</h1>
     </div>
-    <script src="./main.js"></script>
-    <script src="./main1.js"></script>
+    <!-- <script src="./main.js"></script> -->
+    <!-- <script src="./main1.js"></script> -->
     <script>
-        // var car = {
-        //     name:'bmw',
-        //     run: ()=>{
-        //         console.log(this)
-        //     }
-        //     }
-        //     car.run()
+        //n: so keo
+        //d: so vo keo doi 1 keo
+        //t so vo thua
+        function count(totalMoney, price, swap) {
+            var count = Math.floor(totalMoney/price);
+            function fc(t, swap) {
+                if (t < swap) {
+                    return 0;
+                }
+                count += Math.floor(t / swap);
+                t = Math.floor(t / swap) + t % swap;
+                return fc(t, swap);
+            }
+            fc(Math.floor(totalMoney/price), swap);
+            console.log(count);
+            return 1;
+        }
+        count(4,2,2)
     </script>
 </body>
+
 </html>

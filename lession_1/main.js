@@ -307,16 +307,103 @@ console.log(newCount);
 // }
 // checkSame(arraySame);
 
-function numberCheck(numbers) {
-  numbers.sort((a,b) => parseInt(a) - parseInt(b));
+function numberCheck(array) {
+  //sap xep
+  let array1 = array.sort((a, b) => parseInt(a) - parseInt(b));
   const hash = {}
+  let length = array.length
 
-  for(let i = 0 ; i < numbers.length; i++) {
-      const num = numbers[i];
-      if (hash[num] === undefined) hash[num] = i
+  for (let i = 0; i < length; i++) {
+    const num = array[i];
+    if (hash[num] === undefined) hash[num] = true
   }
-  console.log(hash)
-  return numbers.map(num => hash[num]);
+
+  let keyObject = Object.keys(hash);
+  let arrays = keyObject.map(function (item) {
+    return parseInt(item);
+  })
+  return arrays;
 }
 
-console.log(numberCheck([1,2,3,3,4,5,656]))
+console.log(numberCheck([1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5]))
+
+
+// let str = "aabbbaaccd";
+// let chars = str.split('');
+// let count;
+// let newStr = "";
+// for(let i=0;i< chars.length;i++){
+//     count=1;
+//     for (let j=i+1;j< chars.length;j++){
+//       if(chars[i] == chars[j]){
+//         count++;
+//       } else {
+//         break;
+//       }
+//       i = j;
+//     }
+//     newStr += chars[i]+""+count
+// }
+
+// let arr = [123123211,22222,333,4,5,6,5, 1111111111111,3,3,2,2,2];
+// let num1, num2, num3;
+
+// if(arr[0] >= arr[1]) {
+//   num1 = arr[0];
+//   num2 = arr[1];
+// } else {
+//   num1 = arr[1]
+//   num2 = arr[0]
+// }
+
+// if(arr[2] >= num1) {
+//   num3 = num2;
+//   num2 = num1;
+//   num1 = arr[2]
+// } else if(arr[2] >= num2) {
+//   num3 = num2;
+//   num2 = arr[2];
+// } else {
+//   num3 = arr[2]
+// }
+
+// for(let i = 3; i < arr.length; i++) {
+//   let num =  arr[i];
+//   if (num >= num1) {
+//     num3 = num2;
+//     num2 = num1;
+//     num1=num
+//   } else if(num >=num2) {
+//     num3 = num2
+//     num2 = num
+//   } else if(num >=num3){
+//     num3 = num
+//   }
+// }
+// console.log(num1, num2, num3)
+
+// let str1 = 'aaaabbbbdddcccddddsss' 
+// let arr = str1.split('');
+// let count = 1;
+// let str = '';
+
+// for(let i  = 0; i < arr.length; i++) {
+//   if (arr[i] == arr[i+1]) {
+//     count++
+//   } else {
+//     str += arr[i] + count
+//     count = 1
+//   }
+// }
+
+// let a = 3;
+// let b = 4;
+
+// a = a*b // 12
+// b = a/b //3
+// a = a/b//4
+
+
+// console.log(str[8]); 
+
+
